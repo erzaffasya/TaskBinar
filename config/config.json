@@ -1,20 +1,20 @@
 {
   "development": {
     "username": "postgres",
-    "password": "admin",
-    "database": "remedial_binar",
+    "password": "2105",
+    "database": "db_pelatihan",
     "dialect": "postgres"
   },
   "test": {
     "username": "postgres",
-    "password": "admin",
-    "database": "remedial_binar",
+    "password": "2105",
+    "database": "db_pelatihan",
     "dialect": "postgres"
   },
   "tweetion": {
     "username": "postgres",
-    "password": "admin",
-    "database": "remedial_binar",
+    "password": "2105",
+    "database": "db_pelatihan",
     "dialect": "postgres"
   }
 }
