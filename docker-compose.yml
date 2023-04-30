@@ -7,12 +7,13 @@ services:
     depends_on:
       - postgres
     environment:
-      DATABASE_URL: postgres://user:pass@postgres:5432/db
+      DATABASE_URL: postgres://postgres:admin@postgres:5432/remedial_binar
       NODE_ENV: development
       PORT: 3000
+      DB_HOST: host.docker.internal
     ports:
       - "3000:3000"
-    command: npm run dev
+    command: bash -c "npm install -g sequelize-cli && npm run dev"
     volumes:
       - .:/app/
       - /app/node_modules
@@ -20,8 +21,9 @@ services:
   postgres:
     image: postgres:12
     ports:
-      - "35432:5432"
+      - "5432:5432"
     environment:
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: pass
-      POSTGRES_DB: db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: remedial_binar
+      
