@@ -1,0 +1,24 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "postgres",
+    "database": "binar_platinum",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "postgres",
+    "password": "2105",
+    "database": "binar_platinum",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "tweetion": {
+    "username": "postgres",
+    "password": "2105",
+    "database": "binar_platinum",
+    "host": "localhost",
+    "dialect": "postgres"
+  }
+}
+
