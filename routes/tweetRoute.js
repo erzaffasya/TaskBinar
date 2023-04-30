@@ -5,9 +5,6 @@ const tweetController = new TweetController();
 const validation  = require('../middlewares/validation');
 const { tweetValidator } = require ('../helpers/validator')
 const { auth } = require('../middlewares/authentication');
-const { upload } = require('../middlewares/multer')
-
-//   router API
 
 router.get('/tweet', auth, tweetController.get);
 router.post('/tweet', auth, validation(tweetValidator), tweetController.create);

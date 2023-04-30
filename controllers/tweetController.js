@@ -41,7 +41,7 @@ class TweetController {
   }
   async update(req, res, next) {
     try {
-      const { tweet, quantity, price } = req.body;
+      const { tweet } = req.body;
       const { id } = req.params;
       const searchID = await Tweets.findOne({
         where: { id: id },

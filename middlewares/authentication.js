@@ -49,6 +49,25 @@ const auth = async (req, res, next) => {
   }
 };
 
+const authNotVerif = async (req, res, next) => {
+  try {
+    const token = req.headers.token;
+    if (!token) {
+      throw new Error(401, 'Invalid token');
+    }
+    const decodedToken = verifyToken(token);
+    const user = await Users.findByPk(decodedToken.id);
+    req.user = {
+      id: user.id,
+      email: user.email,
+      role: user.role
+    };
+    next();
+  } catch (error) { 
+    next(error);
+  }
+};
+
 const authAdmin = async (req, res, next) => {
   try {
     const token = req.headers.token;
@@ -74,4 +93,4 @@ const authAdmin = async (req, res, next) => {
   }
 };
 
-module.exports = { authAdmin, auth, authUser};
+module.exports = { authAdmin, authNotVerif, auth, authUser};

@@ -21,6 +21,30 @@ class UserController {
       next(error);
     }
   }
+  async profile(req, res, next) {
+    try {
+      const data = await Users.findOne({
+        where: { id: req.user.id }
+      });
+      if (data.length < 1) {
+        throw new Error(400, "There is no user yet");
+      }
+      return new Response(res, 200, {
+        'name': data.name,
+        'email': data.email,
+        'street': data.street,
+        'city': data.city,
+        'avatar': data.avatar,
+        'role': data.role,
+        'confirmed': data.confirmed,
+        'isActive': data.isActive,
+        'createdAt': data.createdAt,
+        'updatedAt': data.updatedAt,
+      });
+    } catch (error) {
+      next(error);
+    }
+  }
   async register(req, res, next) {
     try {
       const { name, email, password, street, city, role } = req.body;
@@ -230,6 +254,33 @@ class UserController {
         { where: { id: id } }
       );
       return new Response(res, 200, "Account has been activated");
+    } catch (error) {
+      next(error);
+    }
+  }
+
+  async sendVerif(req, res, next) {
+
+    try {
+      const checkUser = await Users.findOne({ where: { id:req.user.id } });
+      if(!checkUser.confirmed){
+        const payload = {
+          id: checkUser.id,
+          email: checkUser.email,
+          confirmed: checkUser.confirmed,
+        };
+        const token = getToken(payload);
+        const url = `http://localhost:${process.env.PORT}/api/user/verify/?token=${token}`;
+        const msg = {
+          from: `'Tweet Platinum <${process.env.EMAIL_TRANSPORTER}>'`,
+          to: `${checkUser.email}`,
+          subject: "Invitation to Join Tweet Platinum ",
+          text: `Click this link to confirm your registration: "${url}"`,
+        };
+        const send = await transporter.sendMail(msg);
+        return new Response(res, 200, "E-mail has been sent");
+      }
+      return new Response(res, 200, "E-mail has been verified");
     } catch (error) {
       next(error);
     }
