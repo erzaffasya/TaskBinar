@@ -2,18 +2,21 @@
   "development": {
     "username": "postgres",
     "password": "admin",
+    "host": "localhost",
     "database": "db_pelatihan",
     "dialect": "postgres"
   },
   "test": {
     "username": "postgres",
     "password": "admin",
+    "host": "localhost",
     "database": "db_pelatihan",
     "dialect": "postgres"
   },
   "tweetion": {
     "username": "postgres",
     "password": "admin",
+    "host": "localhost",
     "database": "db_pelatihan",
     "dialect": "postgres"
   }
