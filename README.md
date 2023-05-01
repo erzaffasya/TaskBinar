@@ -76,3 +76,5 @@ http://localhost:8889/api/chat/?role=admin
 Step 5:
 Join Room
 
+## Server 
+http://34.101.127.246:8889/api/
