@@ -10,6 +10,30 @@
 			"name": "user",
 			"item": [
 				{
+					"name": "get profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJjb25maXJtZWQiOnRydWUsImlhdCI6MTY4MDg1OTQ1Nn0.ly8MaHKUSnceFR9YUux9dlV7SX63T6vr0xVM_PPwHb8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/profile",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "get user",
 					"request": {
 						"method": "GET",

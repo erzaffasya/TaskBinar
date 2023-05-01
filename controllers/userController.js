@@ -160,10 +160,20 @@ class UserController {
         },
         { where: { id: id } }
       );
-      const newUser = await Users.findOne({
+      const data = await Users.findOne({
         where: { id: id },
       });
-      return new Response(res, 200, newUser);
+      return new Response(res, 200, {
+        'name': data.name,
+        'email': data.email,
+        'street': data.street,
+        'city': data.city,
+        'avatar': data.avatar,
+        'role': data.role,
+        'confirmed': data.confirmed,
+        'isActive': data.isActive,
+        'createdAt': data.createdAt,
+        'updatedAt': data.updatedAt,});
     } catch (error) {
       next(error);
     }
