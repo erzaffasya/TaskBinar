@@ -1,4 +1,9 @@
 # Remidial BEJ7
+
+## Docs
+- Postman Docs : remed-binar.postman_collection.json
+- Swagger : /api/docs
+
 ## 🛠️ Installation Steps
 
 Installation project - manual
@@ -56,9 +61,7 @@ localhost:8889
 
 <br>
 
-## Docs
-Postman Docs : remed-binar.postman_collection.json
-Swagger : /api/docs
+
 
 ## Socket
 
