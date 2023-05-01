@@ -1,23 +1,23 @@
 {
   "development": {
     "username": "postgres",
-    "password": "admin",
+    "password": "2105",
     "host": "localhost",
-    "database": "db_pelatihan",
+    "database": "binar_platinum",
     "dialect": "postgres"
   },
   "test": {
     "username": "postgres",
-    "password": "admin",
+    "password": "2105",
     "host": "localhost",
-    "database": "db_pelatihan",
+    "database": "binar_platinum",
     "dialect": "postgres"
   },
   "tweetion": {
     "username": "postgres",
-    "password": "admin",
+    "password": "2105",
     "host": "localhost",
-    "database": "db_pelatihan",
+    "database": "binar_platinum",
     "dialect": "postgres"
   }
 }

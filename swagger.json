@@ -152,13 +152,23 @@
                 }
             }
         },
-        "/api/user/verify": {
+        "/api/user/verify?token={token}": {
             "get": {
                 "tags": [
                     "user"
                 ],
                 "summary": "verify user",
                 "description": "verify user with the link sent to the email",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "User verified and confirmed"
@@ -246,7 +256,7 @@
                 }
             }
         },
-        "/api/avatar": {
+        "/api/update-avatar": {
             "post": {
                 "tags": [
                     "user"
@@ -296,6 +306,136 @@
                     },
                     "500": {
                         "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/api/profile": {
+            "get": {
+                "tags": [
+                    "user"
+                ],
+                "summary": "verify user",
+                "description": "verify user with the link sent to the email",
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "token",
+                        "description": "user token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User verified and confirmed"
+                    },
+                    "500": {
+                        "description": "Invalid Token / Internal server error"
+                    }
+                }
+            }
+        },
+        "/api/send-verif": {
+            "post": {
+                "tags": [
+                    "user"
+                ],
+                "summary": "verify user",
+                "description": "verify user with the link sent to the email",
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "token",
+                        "description": "user token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User verified and confirmed"
+                    },
+                    "500": {
+                        "description": "Invalid Token / Internal server error"
+                    }
+                }
+            }
+        },
+        "/api/active-user/{id}": {
+            "post": {
+                "tags": [
+                    "user"
+                ],
+                "summary": "verify user",
+                "description": "verify user with the link sent to the email",
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "token",
+                        "description": "user token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "user id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User verified and confirmed"
+                    },
+                    "500": {
+                        "description": "Invalid Token / Internal server error"
+                    }
+                }
+            }
+        },
+        "/api/disable-user/{id}": {
+            "post": {
+                "tags": [
+                    "user"
+                ],
+                "summary": "verify user",
+                "description": "verify user with the link sent to the email",
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "token",
+                        "description": "user token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "user id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User verified and confirmed"
+                    },
+                    "500": {
+                        "description": "Invalid Token / Internal server error"
                     }
                 }
             }
@@ -358,7 +498,7 @@
                     "tweet"
                 ],
                 "summary": "create new tweet max lenght 160",
-                "description": "require a **header token** and only can be done with **admin role**",
+                "description": "require a **header token**",
                 "consumes": [
                     "application/json"
                 ],
@@ -405,12 +545,96 @@
                         "description": "Internal server error"
                     }
                 }
-            },
+            }
+        },
+        "/api/tweet/{id}": {
             "delete": {
                 "tags": [
                     "tweet"
                 ],
                 "summary": "delete tweet by id",
+                "description": "require a **header token** ",
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "token",
+                        "description": "user token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "user id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "tweet has been deleted"
+                    },
+                    "400": {
+                        "description": "There is no user with ID {id}"
+                    },
+                    "401": {
+                        "description": "Unauthorized to make changes"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "tweet"
+                ],
+                "summary": "get tweet by id",
+                "description": "require a **header token** ",
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "token",
+                        "description": "user token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "user id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "tweet has been show"
+                    },
+                    "400": {
+                        "description": "There is no user with ID {id}"
+                    },
+                    "401": {
+                        "description": "Unauthorized "
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "tweet"
+                ],
+                "summary": "edit tweet by id",
                 "description": "require a **header token** and only can be done with **user role**",
                 "parameters": [
                     {
@@ -421,11 +645,31 @@
                         "schema": {
                             "type": "string"
                         }
+                    },
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "user id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
                     }
                 ],
+                "requestBody": {
+                    "description": "fields that need to be filled in",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/TweetUpdateFields"
+                            }
+                        }
+                    }
+                },
                 "responses": {
                     "200": {
-                        "description": "tweet has been deleted"
+                        "description": "tweet has been updated"
                     },
                     "400": {
                         "description": "There is no user with ID {id}"

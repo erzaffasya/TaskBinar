@@ -7,7 +7,7 @@ Installation project - manual
 
 clone project
 ``` bson
-git clone https://github.com/erzaffasya/Platinum-BEJ7-Group2.git
+git clone https://github.com/erzaffasya/TaskBinar
 ```
 
 add node modules 
@@ -36,38 +36,24 @@ run applicatiion
 npm run dev
 ```
 
-<!-- 
+
 Installation project - docker
 
 customize env in file docker-compose.yml -> platinum
 run docker compose in project
 ``` bson
-docker-compose up -t
+docker-compose up -d
 ```
-open terminal container platinum in docker app
-
-create db 
-```bson
-sequelize db:create
-```
+open terminal container project in docker app
 
 migrate table 
 ```bson
 sequelize db:migrate
 ```
 
-fill the table with dummy data 
-```bson
-sequelize db:migrate:all
-```
-
-open kibana in browser
-```bson
-localhost:5601
-```
 open app in browser
 ```bson
-localhost:3000
+localhost:8889
 ```
 
-<br> -->
+<br>

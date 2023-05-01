@@ -6,7 +6,7 @@ const routes = require('./routes');
 require('dotenv').config();
 const server = require('http').createServer(app);
 const io = require('socket.io')(server);
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8889;
 const swaggerUI = require('swagger-ui-express');
 const swaggerDoc = require('./swagger.json');
 

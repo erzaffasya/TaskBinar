@@ -9,10 +9,10 @@ services:
     environment:
       DATABASE_URL: postgres://postgres:admin@postgres:5432/remedial_binar
       NODE_ENV: development
-      PORT: 3000
+      PORT: 8889
       DB_HOST: host.docker.internal
     ports:
-      - "3000:3000"
+      - "8889:8889"
     command: bash -c "npm install -g sequelize-cli && npm run dev"
     volumes:
       - .:/app/
