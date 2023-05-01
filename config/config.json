@@ -1,23 +1,23 @@
 {
   "development": {
     "username": "postgres",
-    "password": "2105",
+    "password": "admin",
     "host": "localhost",
-    "database": "binar_platinum",
+    "database": "remedial_binar",
     "dialect": "postgres"
   },
   "test": {
     "username": "postgres",
-    "password": "2105",
+    "password": "admin",
     "host": "localhost",
-    "database": "binar_platinum",
+    "database": "remedial_binar",
     "dialect": "postgres"
   },
   "tweetion": {
     "username": "postgres",
-    "password": "2105",
+    "password": "admin",
     "host": "localhost",
-    "database": "binar_platinum",
+    "database": "remedial_binar",
     "dialect": "postgres"
   }
 }
