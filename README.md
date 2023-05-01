@@ -1,9 +1,5 @@
 # Remidial BEJ7
- 
-
 ## 🛠️ Installation Steps
-## Postman Docs : remed-binar.postman_collection.json
-## Swagger : /api/docs
 
 Installation project - manual
 
@@ -60,6 +56,10 @@ localhost:8889
 
 <br>
 
+## Docs
+Postman Docs : remed-binar.postman_collection.json
+Swagger : /api/docs
+
 ## Socket
 
 Step 1 :
@@ -75,3 +75,4 @@ http://localhost:8889/api/chat/?role=admin
 
 Step 5:
 Join Room
+
