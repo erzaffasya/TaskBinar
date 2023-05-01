@@ -2,6 +2,8 @@
  
 
 ## 🛠️ Installation Steps
+## Postman Docs : remed-binar.postman_collection.json
+## Swagger : /api/docs
 
 Installation project - manual
 
@@ -57,3 +59,19 @@ localhost:8889
 ```
 
 <br>
+
+## Socket
+
+Step 1 :
+Open Link :
+http://localhost:8889/api/chat/?role=user
+
+Step 3 :
+Join Room
+
+Step 4 :
+Open Link :
+http://localhost:8889/api/chat/?role=admin
+
+Step 5:
+Join Room

@@ -1,0 +1,569 @@
+{
+	"info": {
+		"_postman_id": "e6b17301-d5ca-4281-8aea-8030a0e490de",
+		"name": "remed-binar",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17963825"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "get user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJjb25maXJtZWQiOnRydWUsImlhdCI6MTY4MDg1OTQ1Nn0.ly8MaHKUSnceFR9YUux9dlV7SX63T6vr0xVM_PPwHb8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/profile",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verify user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/user/verify/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJlZmZhc3lhQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImNvbmZpcm1lZCI6dHJ1ZSwiaWF0IjoxNjgyOTEzOTExfQ.igI8G-dFrkeShzZ5fzDQnAKAMa8lav9-zgI5a_2ykmM",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"verify",
+								""
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJlZmZhc3lhQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImNvbmZpcm1lZCI6dHJ1ZSwiaWF0IjoxNjgyOTEzOTExfQ.igI8G-dFrkeShzZ5fzDQnAKAMa8lav9-zgI5a_2ykmM"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post registrasi",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"name\": \"erza\",\n        \"email\": \"effasya@gmail.com\",\n        \"password\": \"123123123\",\n        \"street\": \"sunny\",\n        \"city\": \"raftel\",\n        \"role\": \"user\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"effasya@gmail.com\",\n    \"password\": \"123123123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "active user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJjb25maXJtZWQiOnRydWUsImlhdCI6MTY4Mjg0Mjc5MX0.9H8NoYMxtMbDtw-BsuXdIRa-VzikEal0Jz2L_sR9eWY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"admin@gmail.com\",\n    \"password\": \"123123123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/active-user/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"active-user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "send-verif",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJlZmZhc3lhQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImNvbmZpcm1lZCI6dHJ1ZSwiaWF0IjoxNjgyOTE1NDIwfQ.pIpzpFvgg3gwuu7s0uYmO--xEJ0FHJDs6lIHZ2PE2w0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"admin@gmail.com\",\n    \"password\": \"123123123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/send-verif",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"send-verif"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-avatar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJlZmZhc3lhQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImNvbmZpcm1lZCI6dHJ1ZSwiaWF0IjoxNjgyOTE1NDIwfQ.pIpzpFvgg3gwuu7s0uYmO--xEJ0FHJDs6lIHZ2PE2w0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/Users/erza/Downloads/logo.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/update-avatar",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"update-avatar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "disable user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJjb25maXJtZWQiOnRydWUsImlhdCI6MTY4Mjg0Mjc5MX0.9H8NoYMxtMbDtw-BsuXdIRa-VzikEal0Jz2L_sR9eWY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"admin@gmail.com\",\n    \"password\": \"123123123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/disable-user/7",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"disable-user",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "active user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJjb25maXJtZWQiOnRydWUsImlhdCI6MTY4Mjg0Mjc5MX0.9H8NoYMxtMbDtw-BsuXdIRa-VzikEal0Jz2L_sR9eWY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"admin@gmail.com\",\n    \"password\": \"123123123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/active-user/7",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"active-user",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "patch user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJjb25maXJtZWQiOnRydWUsImlhdCI6MTY4MjcxMjM3Nn0.EpKDcc0N2ZPexhXbvNyzeQd07feGuWxYQv7aV6BrDzw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJjb25maXJtZWQiOnRydWUsImlhdCI6MTY4Mjg4MDQ2MX0.Ja4SqtXnDBBhcCf_Ul1BUibfP-86R4dC7WJXNNM1m10",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/Users/erza/Downloads/WhatsApp Image 2023-03-17 at 4.34.28 PM.jpeg"
+								},
+								{
+									"key": "name",
+									"value": "sad",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "street",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "city",
+									"value": "asd",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/update-avatar",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"update-avatar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{url}}/api/user/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "tweet",
+			"item": [
+				{
+					"name": "get tweet",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJjb25maXJtZWQiOnRydWUsImlhdCI6MTY4MDg1Nzg1M30.ZSRVJoFx0Ifc7nC_B5qEizq31qLdNSqII7EpSzHJx7k",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/tweet?page=1&limit=3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"tweet"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post tweet",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJjb25maXJtZWQiOnRydWUsImlhdCI6MTY4Mjg5MjM3Nn0.5D6fbXz2XBrjIK0NeVRynWz2uxhJrd1MK7oM4qCWWgo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"tweet\" : \"test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/tweet/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"tweet",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "patch tweet",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJjb25maXJtZWQiOnRydWUsImlhdCI6MTY4Mjg4MDQ2MX0.Ja4SqtXnDBBhcCf_Ul1BUibfP-86R4dC7WJXNNM1m10",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"tweet\": \"Victor\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/tweet/6",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"tweet",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete tweet",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJjb25maXJtZWQiOnRydWUsImlhdCI6MTY4MDg1OTQ1Nn0.ly8MaHKUSnceFR9YUux9dlV7SX63T6vr0xVM_PPwHb8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{url}}/api/tweet/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"tweet",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJjb25maXJtZWQiOnRydWUsImlhdCI6MTY4MjcxMjM3Nn0.EpKDcc0N2ZPexhXbvNyzeQd07feGuWxYQv7aV6BrDzw",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:8889",
+			"type": "string"
+		},
+		{
+			"key": "url-server",
+			"value": "http://34.128.104.172:8889",
+			"type": "string"
+		}
+	]
+}
